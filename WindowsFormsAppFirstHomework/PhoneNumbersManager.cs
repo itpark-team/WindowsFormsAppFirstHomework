@@ -57,7 +57,7 @@ namespace WindowsFormsAppFirstHomework
             return phoneNumbers;
         }
 
-        public List<PhoneNumber> PrintPhoneNumbersByGrade(PhoneNumber.GradeList grade)
+        public List<PhoneNumber> GetPhoneNumbersByGrade(PhoneNumber.GradeList grade)
         {
             List<PhoneNumber> temp = new List<PhoneNumber>();
 

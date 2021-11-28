@@ -14,11 +14,9 @@ namespace WindowsFormsAppFirstHomework
     {
         private PhoneNumbersManager phoneNumbersManager;
 
-        private void UpdatedataGridViewPhoneNumbers()
+        private void UpdatedataGridViewPhoneNumbers(List<PhoneNumber> phoneNumbers)
         {
             dataGridViewPhoneNumbers.Rows.Clear();
-
-            List<PhoneNumber> phoneNumbers = phoneNumbersManager.GetPhoneNumbers();
 
             for (int i = 0; i < phoneNumbers.Count; i++)
             {
@@ -45,7 +43,7 @@ namespace WindowsFormsAppFirstHomework
         private void buttonPhoneNumbersFromTxtFile_Click(object sender, EventArgs e)
         {
             phoneNumbersManager.LoadPhoneNumbersFromTxtFile();
-            UpdatedataGridViewPhoneNumbers();
+            UpdatedataGridViewPhoneNumbers(phoneNumbersManager.GetPhoneNumbers());
         }
 
         private void buttonAddPhoneNumber_Click(object sender, EventArgs e)
@@ -61,7 +59,7 @@ namespace WindowsFormsAppFirstHomework
             PhoneNumber pnum = new PhoneNumber(number, name, info, grade);
 
             phoneNumbersManager.AddPhoneNumber(pnum);
-            UpdatedataGridViewPhoneNumbers();
+            UpdatedataGridViewPhoneNumbers(phoneNumbersManager.GetPhoneNumbers());
 
             textBoxNumber.Clear();
             textBoxName.Clear();
